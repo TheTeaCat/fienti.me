@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>When will I see my girlfriend again?</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Vollkorn:wght@800&display=swap');
+      html, body {
+        width: 100%; height: 100%;
+        margin: 0;
+        background: black;
+        color: white;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Vollkorn', serif;
+      }
+      #time {
+        font-size: 48pt;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="time">350h 49m</p>
+    <script src="./humanizeDuration.js"></script>
+    <script>
+      timerElem = document.getElementById('time')
+      nextFien = new Date(2022, 0, 21, 21, 45)
+      setInterval(
+        ()=>{
+          secondsUntil = nextFien - Date.now()
+          timerElem.innerHTML = humanizeDuration(secondsUntil, { round: true })
+        },
+        100
+      )
+    </script>
+  </body>
+</html>
