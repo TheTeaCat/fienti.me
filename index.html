@@ -30,8 +30,19 @@
     <script src="./humanizeDuration.js"></script>
     <script>
       timerElem = document.getElementById('time')
+
       nextFien = new Date(2022, 0, 21, 21, 45)
-      updateTimer = () => { timerElem.innerHTML = humanizeDuration(nextFien - Date.now(), { round: true, units: ['h','m','s'] }) }
+
+      updateTimer = () => { 
+        timerElem.innerHTML = humanizeDuration(
+          nextFien - Date.now(),
+          {
+            round: true,
+            units: [ 'h', 'm', 's' ]
+          }
+        )
+      }
+
       updateTimer()
       setInterval(updateTimer,1000)
     </script>
