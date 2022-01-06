@@ -31,13 +31,9 @@
     <script>
       timerElem = document.getElementById('time')
       nextFien = new Date(2022, 0, 21, 21, 45)
-      setInterval(
-        ()=>{
-          secondsUntil = nextFien - Date.now()
-          timerElem.innerHTML = humanizeDuration(secondsUntil, { round: true })
-        },
-        100
-      )
+      updateTimer = () => { timerElem.innerHTML = humanizeDuration(nextFien - Date.now(), { round: true }) }
+      updateTimer()
+      setInterval(updateTimer,100)
     </script>
   </body>
 </html>
